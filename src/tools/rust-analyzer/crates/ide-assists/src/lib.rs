@@ -99,7 +99,7 @@ pub fn assists(
     acc.finish()
 }
 
-mod handlers {
+pub mod handlers {
     use crate::{AssistContext, Assists};
 
     pub(crate) type Handler = fn(&mut Assists, &AssistContext<'_>) -> Option<()>;
@@ -109,7 +109,7 @@ mod handlers {
     mod add_explicit_type;
     mod add_label_to_loop;
     mod add_lifetime_to_type;
-    mod add_missing_impl_members;
+    pub mod add_missing_impl_members;
     mod add_missing_match_arms;
     mod add_return_type;
     mod add_turbo_fish;
@@ -402,3 +402,6 @@ mod handlers {
         ]
     }
 }
+
+#[cfg(test)]
+pub mod rfl;
