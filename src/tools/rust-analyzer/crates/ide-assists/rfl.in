@@ -1,0 +1,16 @@
+trait Foo {
+    type Output;
+
+    const CONST: usize = 42;
+    const CONST_2: i32;
+
+    fn foo(&self);
+    fn bar(&self);
+    fn baz(&self);
+}
+
+struct S;
+
+impl Foo for S {
+    $0
+}
